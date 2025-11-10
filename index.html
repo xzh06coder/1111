@@ -113,6 +113,9 @@
             align-items: center;
             z-index: 10;
             animation: wrapperAppear 0.8s ease-out;
+            max-width: 90vw;
+            max-height: 90vh;
+            overflow-y: auto;
         }
 
         @keyframes wrapperAppear {
@@ -135,6 +138,7 @@
             margin-bottom: 20px;
             text-align: center;
             animation: memeSlideIn 0.6s ease-out 0.2s both;
+            max-width: 100%;
         }
 
         @keyframes memeSlideIn {
@@ -150,9 +154,12 @@
 
         .meme-image {
             width: 200px;
+            max-width: 100%;
             height: auto;
             border-radius: 10px;
             margin-bottom: 10px;
+            display: block;
+            object-fit: contain;
         }
 
         .meme-text {
@@ -289,7 +296,7 @@
     <div class="note-wrapper" id="noteWrapper">
         <!-- 表情包 -->
         <div class="meme-container">
-            <img src="1111.jpg" alt="禁止恋爱表情包" class="1111-image">
+            <img src="1111.jpg" alt="禁止恋爱表情包" class="meme-image">
             <div class="meme-text">光棍节专享提醒</div>
         </div>
 
@@ -388,7 +395,7 @@
                     confetti.style.left = Math.random() * 100 + '%';
                     confetti.style.top = '-10px';
                     confetti.style.borderRadius = '50%';
-                    confetti.style.zIndex = '1000';
+                    confetti.style.z-index = '1000';
                     confetti.style.pointerEvents = 'none';
                     document.body.appendChild(confetti);
                     
